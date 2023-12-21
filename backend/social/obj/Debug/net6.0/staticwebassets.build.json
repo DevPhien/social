@@ -1,0 +1,77 @@
+{
+  "Version": 1,
+  "Hash": "FRqF5SwG02MXLrU3lPEy0vQtgAvm7JGTmFTXatCDx1A=",
+  "Source": "social",
+  "BasePath": "_content/social",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "social\\wwwroot",
+      "Source": "social",
+      "ContentRoot": "C:\\development\\sourcecode\\social-media\\social\\wwwroot\\",
+      "BasePath": "_content/social",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "C:\\development\\sourcecode\\social-media\\social\\wwwroot\\Portals\\Youtube\\client_secret.json",
+      "SourceId": "social",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\development\\sourcecode\\social-media\\social\\wwwroot\\",
+      "BasePath": "_content/social",
+      "RelativePath": "Portals/Youtube/client_secret.json",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Portals\\Youtube\\client_secret.json"
+    },
+    {
+      "Identity": "C:\\development\\sourcecode\\social-media\\social\\wwwroot\\Portals\\Youtube\\download.jpg",
+      "SourceId": "social",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\development\\sourcecode\\social-media\\social\\wwwroot\\",
+      "BasePath": "_content/social",
+      "RelativePath": "Portals/Youtube/download.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Portals\\Youtube\\download.jpg"
+    },
+    {
+      "Identity": "C:\\development\\sourcecode\\social-media\\social\\wwwroot\\Portals\\Youtube\\video4k.mp4",
+      "SourceId": "social",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\development\\sourcecode\\social-media\\social\\wwwroot\\",
+      "BasePath": "_content/social",
+      "RelativePath": "Portals/Youtube/video4k.mp4",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Portals\\Youtube\\video4k.mp4"
+    }
+  ]
+}

@@ -1,0 +1,128 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\development\\sourcecode\\social-media\\social\\social.csproj": {}
+  },
+  "projects": {
+    "C:\\development\\sourcecode\\social-media\\social\\social.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\development\\sourcecode\\social-media\\social\\social.csproj",
+        "projectName": "social",
+        "projectPath": "C:\\development\\sourcecode\\social-media\\social\\social.csproj",
+        "packagesPath": "C:\\Users\\phienmlt\\.nuget\\packages\\",
+        "outputPath": "C:\\development\\sourcecode\\social-media\\social\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\phienmlt\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Facebook": {
+              "target": "Package",
+              "version": "[7.0.6, )"
+            },
+            "Google.Apis": {
+              "target": "Package",
+              "version": "[1.64.0, )"
+            },
+            "Google.Apis.YouTube.v3": {
+              "target": "Package",
+              "version": "[1.64.0.3205, )"
+            },
+            "GoogleApi": {
+              "target": "Package",
+              "version": "[5.3.0, )"
+            },
+            "IdentityModel": {
+              "target": "Package",
+              "version": "[6.2.0, )"
+            },
+            "Microsoft.AspNetCore.Http": {
+              "target": "Package",
+              "version": "[2.2.2, )"
+            },
+            "Microsoft.AspNetCore.Mvc.NewtonsoftJson": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
+            },
+            "RestSharp": {
+              "target": "Package",
+              "version": "[110.2.0, )"
+            },
+            "Scrutor": {
+              "target": "Package",
+              "version": "[4.2.2, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[6.5.0, )"
+            },
+            "System.Collections.Specialized": {
+              "target": "Package",
+              "version": "[4.3.0, )"
+            },
+            "TweetinviAPI": {
+              "target": "Package",
+              "version": "[5.0.4, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

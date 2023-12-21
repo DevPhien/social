@@ -1,0 +1,349 @@
+<div class="grid gap-[10px]">
+  <div class="md:container md:mx-auto flex gap-[10px] my-[10px]">
+    <button
+      type="button"
+      class="bg-blue-400 text-white p-3 rounded-md"
+      ng-click="handlerLogin('facebook')"
+    >
+      Login Facebook
+    </button>
+    <button
+      type="button"
+      class="bg-red-400 text-white p-3 rounded-md"
+      ng-click="handlerLogin('youtube')"
+    >
+      Login Youtube
+    </button>
+    <!-- <button
+      type="button"
+      class="bg-orange-400 text-white p-3 rounded-md"
+      ng-click="handlerLogin('instagram')"
+    >
+      Login Instagram
+    </button> -->
+    <button
+      type="button"
+      class="bg-purple-400 text-white p-3 rounded-md"
+      ng-click="handlerLogin('tiktok')"
+    >
+      Login Tiktok
+    </button>
+  </div>
+  <div class="md:container md:mx-auto">
+    <div class="mb-3">
+      <label>List profiles</label>
+    </div>
+    <div class="border border-solid border-gray rounded-md p-2">
+      <div class="inline-block">
+        <span
+          ng-repeat="profile in profiles"
+          data-dismissible="chip"
+          class="{{ profile.profile_type === 'facebook' ? 'bg-blue-400 text-white' : profile.profile_type === 'youtube' ? 'bg-red-400 text-white' : '' }} relative select-none items-center whitespace-nowrap rounded-lg py-1.5 px-3 text-white mr-2"
+        >
+          <input
+            type="checkbox"
+            class="cursor-pointer"
+            ng-model="profile.checked"
+          />
+          <span><i class="lab la-{{profile.profile_type}}"></i></span>
+          <span class="mr-5" ng-bind="profile.name"></span>
+          <button
+            ng-click="deleteProfile(profile)"
+            data-dismissible-target="chip"
+            class="!absolute top-2/4 right-1 mx-px h-5 max-h-[32px] w-5 max-w-[32px] -translate-y-2/4 select-none rounded-md text-center align-middle font-sans text-xs font-medium uppercase text-white transition-all hover:bg-white/10 active:bg-white/30 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+            type="button"
+          >
+            <span
+              class="absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                class="w-4 h-4"
+                stroke-width="2"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M6 18L18 6M6 6l12 12"
+                ></path>
+              </svg>
+            </span>
+          </button>
+        </span>
+      </div>
+    </div>
+  </div>
+  <div class="md:container md:mx-auto">
+    <div class="row flex gap-10">
+      <div style="width: 50%">
+        <div class="mb-3">
+          <label>Editorial</label>
+        </div>
+        <div>
+          <div class="relative">
+            <div class="relative w-full min-w-[200px]">
+              <textarea
+                rows="8"
+                class="peer h-full min-h-[100px] w-full !resize-none rounded-[7px] border border-blue-gray-200 border-t-transparent bg-transparent px-3 py-2.5 font-sans text-sm font-normal text-blue-gray-700 outline outline-0 transition-all placeholder-shown:border placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 focus:border-2 focus:border-gray-900 focus:border-t-transparent focus:outline-0 disabled:resize-none disabled:border-0 disabled:bg-blue-gray-50"
+                ng-model="socialForm.message"
+              >
+              </textarea>
+              <label
+                class="before:content[' '] after:content[' '] pointer-events-none absolute left-0 -top-1.5 flex h-full w-full select-none text-[11px] font-normal leading-tight text-blue-gray-400 transition-all before:pointer-events-none before:mt-[6.5px] before:mr-1 before:box-border before:block before:h-1.5 before:w-2.5 before:rounded-tl-md before:border-t before:border-l before:border-blue-gray-200 before:transition-all after:pointer-events-none after:mt-[6.5px] after:ml-1 after:box-border after:block after:h-1.5 after:w-2.5 after:flex-grow after:rounded-tr-md after:border-t after:border-r after:border-blue-gray-200 after:transition-all peer-placeholder-shown:text-sm peer-placeholder-shown:leading-[3.75] peer-placeholder-shown:text-blue-gray-500 peer-placeholder-shown:before:border-transparent peer-placeholder-shown:after:border-transparent peer-focus:text-[11px] peer-focus:leading-tight peer-focus:text-gray-900 peer-focus:before:border-t-2 peer-focus:before:border-l-2 peer-focus:before:!border-gray-900 peer-focus:after:border-t-2 peer-focus:after:border-r-2 peer-focus:after:!border-gray-900 peer-disabled:text-transparent peer-disabled:before:border-transparent peer-disabled:after:border-transparent peer-disabled:peer-placeholder-shown:text-blue-gray-500"
+              >
+                Your content
+              </label>
+            </div>
+            <div class="flex w-full justify-between pt-3">
+              <div class="flex">
+                <button
+                  class="px-2 py-1 font-sans text-xs font-bold text-center text-gray-900 align-middle transition-all rounded-lg select-none hover:bg-gray-900/10 active:bg-gray-900/20 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+                  type="button"
+                >
+                  <i class="las la-smile text-3xl"></i>
+                </button>
+                <div>
+                  <button
+                    id="dropdownDefaultButton"
+                    class="btnDrop px-2 py-1 font-sans text-xs font-bold text-center text-gray-900 align-middle transition-all rounded-lg select-none hover:bg-gray-900/10 active:bg-gray-900/20 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+                    type="button"
+                    ng-click="toogleChooseFile()"
+                  >
+                    <i class="btnDrop las la-camera text-3xl"></i>
+                    <i
+                      class="btnDrop las la-angle-down text-xl align-text-bottom"
+                    ></i>
+                  </button>
+                  <div
+                    id="myDropdown"
+                    class="dropdown-content absolute z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44"
+                  >
+                    <ul
+                      class="py-2 text-sm text-gray-700"
+                      aria-labelledby="dropdownDefaultButton"
+                    >
+                      <li ng-click="chooseFile('fileChoose')">
+                        <a class="block px-4 py-2 hover:bg-gray-100">
+                          <i class="las la-image"></i> <span>Chọn image</span>
+                        </a>
+                      </li>
+                      <li ng-click="chooseFile('videoChoose')">
+                        <a class="block px-4 py-2 hover:bg-gray-100">
+                          <i class="las la-video"></i> <span>Chọn video</span>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                  <input
+                    id="fileChoose"
+                    type="file"
+                    accept="image/*"
+                    multiple
+                    file-change="uploadFile()"
+                    ng-model="files"
+                    class="hidden"
+                  />
+                  <input
+                    id="videoChoose"
+                    type="file"
+                    accept="video/*"
+                    file-change="uploadVideo()"
+                    ng-model="videos"
+                    class="hidden"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="w-full grid-file pt-3">
+              <div
+                ng-if="fileCaches != null && fileCaches.length > 0"
+                ng-repeat="file in fileCaches track by $index"
+              >
+                <div
+                  style="background-image: url({{file.url}});"
+                  class="relative bg-cover bg-center h-[150px] border border-solid border-gray rounded-[3px] p-2"
+                >
+                  <button
+                    class="absolute right-0 top-0 px-1 font-sans text-2xl font-bold text-center text-gray-900 uppercase align-middle transition-all rounded-[3px] select-none hover:bg-gray-900/10 active:bg-gray-900/20 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+                    type="button"
+                    ng-click="deleteFile($index)"
+                  >
+                    <i class="las la-times-circle"></i>
+                  </button>
+                </div>
+              </div>
+              <div
+                ng-if="videoCaches != null && videoCaches.length > 0"
+                ng-repeat="video in videoCaches track by $index"
+              >
+                <div class="relative">
+                  <video class="h-full w-full rounded-lg" controls>
+                    <source ng-src="{{video.url}}" type="video/mp4" />
+                  </video>
+                  <button
+                    class="absolute right-0 top-0 px-1 font-sans text-2xl font-bold text-center text-gray-900 uppercase align-middle transition-all rounded-[3px] select-none hover:bg-gray-900/10 active:bg-gray-900/20 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+                    type="button"
+                    ng-click="deleteVideo($index)"
+                  >
+                    <i class="las la-times-circle"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="w-full flex justify-end pt-3">
+              <div class="flex gap-2">
+                <button
+                  class="select-none rounded-md bg-gray-900 py-2 px-4 text-center align-middle font-sans text-xs font-bold text-white shadow-md shadow-gray-900/10 transition-all hover:shadow-lg hover:shadow-gray-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+                  type="button"
+                  ng-click="publicPost()"
+                >
+                  Post
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div style="flex: 1">
+        <div class="mb-3">
+          <label>Network Preview</label>
+        </div>
+        <div
+          class="min-h-[150px] border border-solid border-gray rounded-md p-2 flex flex-col justify-center items-center"
+        >
+          <div
+            ng-repeat="profile in profiles | filter:{ checked: true }"
+            class="w-[400px]"
+          >
+            <div ng-if="profile.profile_type === 'facebook'">
+              <div class="py-3">
+                <i class="lab la-facebook"></i> <span>Facebook</span>
+              </div>
+              <div
+                class="border border-solid border-gray rounded-md shadow-gray-500 shadow-lg"
+              >
+                <div class="p-3">
+                  <div class="flex mb-3 items-center">
+                    <div class="mr-3 h-9 w-9">
+                      <div ng-if="profile.avatar != null">
+                        <img
+                          src="https://docs.material-tailwind.com/img/face-2.jpg"
+                          alt="P"
+                          class="relative inline-block h-9 w-9 !rounded-full object-cover object-center"
+                        />
+                      </div>
+                      <div ng-if="profile.avatar == null">
+                        <div
+                          class="relative bg-blue-400 h-9 w-9 border border-solid border-gray rounded-full"
+                        >
+                          <span
+                            class="absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] text-white"
+                            >P</span
+                          >
+                        </div>
+                      </div>
+                    </div>
+                    <div>
+                      <div ng-bind="profile.name"></div>
+                      <div
+                        ng-bind="socialForm.create_date"
+                        class="text-xs"
+                      ></div>
+                    </div>
+                  </div>
+                  <div ng-bind-html="trustAsHtml(socialForm.message)"></div>
+                </div>
+                <div
+                  v-if="fileCaches != null && fileCaches.length > 0"
+                  class="fb-preview-images"
+                >
+                  <div ng-repeat="file in fileCaches track by $index">
+                    <div
+                      style="background-image: url({{file.url}});"
+                      class="bg-cover bg-center h-[150px]"
+                    ></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div ng-if="profile.profile_type === 'youtube'">
+              <div class="py-3">
+                <i class="lab la-youtube"></i> <span>Youtube</span>
+              </div>
+              <div
+                class="border border-solid border-gray rounded-md shadow-gray-500 shadow-lg"
+              >
+                <div
+                  ng-if="videoCaches != null && videoCaches.length > 0"
+                  ng-repeat="video in videoCaches track by $index"
+                  class="w-full h-[250px]"
+                >
+                  <video class="h-full w-full" controls>
+                    <source ng-src="{{video.url}}" type="video/mp4" />
+                  </video>
+                </div>
+                <div class="p-3">
+                  <div class="flex mt-3">
+                    <div class="mr-3 h-9 w-9">
+                      <div ng-if="profile.avatar != null">
+                        <img
+                          src="https://docs.material-tailwind.com/img/face-2.jpg"
+                          alt="P"
+                          class="relative inline-block h-9 w-9 !rounded-full object-cover object-center"
+                        />
+                      </div>
+                      <div ng-if="profile.avatar == null">
+                        <div
+                          class="relative bg-red-400 h-9 w-9 border border-solid border-gray rounded-full"
+                        >
+                          <span
+                            class="absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] text-white"
+                            >P</span
+                          >
+                        </div>
+                      </div>
+                    </div>
+                    <div>
+                      <div ng-bind-html="trustAsHtml(socialForm.message)"></div>
+                      <div ng-bind="profile.name"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div ng-if="profile.profile_type === 'instagram'">
+              <div class="py-3">
+                <i class="lab la-youtube"></i> <span>instagram</span>
+              </div>
+            </div>
+            <div ng-if="profile.profile_type === 'tiktok'">
+              <div class="py-3">
+                <i class="lab la-youtube"></i> <span>tiktok</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<style>
+  .grid-file {
+    --grid-layout-gap: 0.5rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    grid-gap: var(--grid-layout-gap);
+  }
+  .fb-preview-images {
+    --grid-layout-gap: 0.25rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    grid-gap: var(--grid-layout-gap);
+  }
+  .fb-preview-image-1 {
+    height: calc(66.66% - 1px);
+  }
+</style>
